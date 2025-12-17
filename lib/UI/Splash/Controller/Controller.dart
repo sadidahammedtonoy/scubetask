@@ -6,7 +6,7 @@ class splash_controler extends GetxController {
   void onInit() {
     super.onInit();
     Future.delayed(Duration(milliseconds: 1500), () async {
-      Get.offAllNamed(routes.scube_home_screen);
+      Get.offAllNamed(routes.scube_login_screen);
     });
   }
 
