@@ -1,50 +1,58 @@
-# Scube task Code Structure
+scube_task/
+│
+├── assets/
+│   ├── icons/
+│   └── images/
+│
+├── lib/
+│   │
+│   ├── app/
+│   │   ├── app.dart
+│   │   ├── app_colors.dart
+│   │   ├── assets_path.dart
+│   │   ├── binding.dart
+│   │   ├── custom_theme.dart
+│   │   └── routes.dart
+│   │
+│   ├── core/
+│   │   └── services/
+│   │
+│   ├── ui/
+│   │   ├── authentication/
+│   │   │   └── login/
+│   │   │       ├── controller/
+│   │   │       │   └── login_controller.dart
+│   │   │       └── view/
+│   │   │           └── login.dart
+│   │   │
+│   │   ├── features/
+│   │   │   ├── data_preview/
+│   │   │   │   ├── controller/
+│   │   │   │   │   └── data_preview_controller.dart
+│   │   │   │   └── view/
+│   │   │   │       └── data_preview.dart
+│   │   │   │
+│   │   │   ├── home/
+│   │   │   │   ├── controller/
+│   │   │   │   │   └── home_controller.dart
+│   │   │   │   └── view/
+│   │   │   │       └── home.dart
+│   │   │   │
+│   │   │   ├── options/
+│   │   │   │   └── view/
+│   │   │   │       └── options.dart
+│   │   │   │
+│   │   │   └── splash/
+│   │   │       ├── controller/
+│   │   │       │   └── splash_controller.dart
+│   │   │       └── view/
+│   │   │           └── splash.dart
+│   │
+│   └── main.dart
+│
+├── pubspec.yaml
+└── README.md
 
-# Assets Path
-  assets
-      |-icons
-      |-images
-      
-# Complete File Structure
-
-lib
-  |-App
-     ⤷ app.dart
-     ⤷ AppColors.dart
-     ⤷ assets_path.dart
-     ⤷ Binding.dart
-     ⤷ CustomTheme.dart
-     ⤷ routes.dart
-     
-  |-Core
-      |-Service
-      
-  |-UI
-     |-Authentication
-          |-Login
-              |-Controller
-                  ⤷ Controller.dart
-              |-View
-                  ⤷ login.dart
-     |- Features
-           |- Data_preview
-              |-Controller
-                  ⤷ Controller.dart
-              |-View
-                  ⤷ data_preview.dart
-           |- Home
-              |-Controller
-                  ⤷ Controller.dart
-              |- View
-                  ⤷ home.dart
-           |- Options
-              |-View
-                  ⤷ options.dart
-           |- Splash
-              |-Controller
-                  ⤷ Controller.dart
-              |-View
-                  ⤷ splash.dart
 
 
 
