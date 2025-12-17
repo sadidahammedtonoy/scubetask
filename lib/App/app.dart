@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:scubetask/App/routes.dart';
 
 import 'Binding.dart';
+import 'CustomTheme.dart';
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(375, 815),
       builder: (_, __) => GetMaterialApp(
         debugShowCheckedModeBanner: false,
+        theme: customTheme,
         initialBinding: InitialBinding(),
         getPages: routes.pages,
         initialRoute: routes.splash_screen,
