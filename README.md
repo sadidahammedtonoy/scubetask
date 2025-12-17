@@ -1,16 +1,60 @@
-# scubetask
+# Scube task Code Structure
 
-A new Flutter project.
+# Assets Path
+  assets
+      |-icons
+      |-images
+      
+# Complete File Structure
 
-## Getting Started
+lib
+  |-App
+     ⤷ app.dart
+     ⤷ AppColors.dart
+     ⤷ assets_path.dart
+     ⤷ Binding.dart
+     ⤷ CustomTheme.dart
+     ⤷ routes.dart
+     
+  |-Core
+      |-Service
+      
+  |-UI
+     |-Authentication
+          |-Login
+              |-Controller
+                  ⤷ Controller.dart
+              |-View
+                  ⤷ login.dart
+     |- Features
+           |- Data_preview
+              |-Controller
+                  ⤷ Controller.dart
+              |-View
+                  ⤷ data_preview.dart
+           |- Home
+              |-Controller
+                  ⤷ Controller.dart
+              |- View
+                  ⤷ home.dart
+           |- Options
+              |-View
+                  ⤷ options.dart
+           |- Splash
+              |-Controller
+                  ⤷ Controller.dart
+              |-View
+                  ⤷ splash.dart
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+
+
+
+
+
+
+                  
