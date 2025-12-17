@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:scubetask/App/AppColors.dart';
-import 'package:scubetask/App/assets_path.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../Controller/Controller.dart';
 class scube_home extends StatelessWidget {
@@ -24,7 +23,6 @@ class scube_home extends StatelessWidget {
           spacing: 15,
           children: [
             const SizedBox(height: 10,),
-
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
@@ -120,45 +118,48 @@ class scube_home extends StatelessWidget {
                                                           itemCount: controller.chart_list.length,
                                                           itemBuilder: (context, index){
                                                             final data = controller.chart_list[index];
-                                                            return Container(
-                                                                padding: EdgeInsets.all(10),
-                                                                margin: EdgeInsets.all(10),
-                                                                decoration: BoxDecoration(
-                                                                    color: Color(0xFFE5F4FE),
-                                                                    borderRadius: BorderRadius.circular(10),
-                                                                    border: Border.all(
-                                                                        color: Color(0xFFA5A7B9)
-                                                                    )
-                                                                ),
-                                                                child: ListTile(
-                                                                  leading: Image.asset("${data["icon"]}", height: 25,),
-                                                                  title: Row(
-                                                                    children: [
-                                                                      Container(
-                                                                        height: 15,
-                                                                        width: 15,
-                                                                        color: Color(int.parse(data["color_code"] as String)),
-                                                                      ),
-                                                                      const SizedBox(width: 10,),
-                                                                      Text("${data["title"]}", style: TextStyle(fontWeight: FontWeight.bold),),
-                                                                      SizedBox(width: 10,),
-                                                                      Text("(${data["status"]})", style: TextStyle(fontSize: 10.sp, color: data["status"] == "Active" ? Colors.green : Colors.red),)
-                                                                    ],
+                                                            return GestureDetector(
+                                                              onTap: () => controller.route_data_preview(),
+                                                              child: Container(
+                                                                  padding: EdgeInsets.all(10),
+                                                                  margin: EdgeInsets.all(10),
+                                                                  decoration: BoxDecoration(
+                                                                      color: Color(0xFFE5F4FE),
+                                                                      borderRadius: BorderRadius.circular(10),
+                                                                      border: Border.all(
+                                                                          color: Color(0xFFA5A7B9)
+                                                                      )
                                                                   ),
-                                                                  subtitle: ListView.builder(
-                                                                      itemCount: (data["data"] as List<dynamic>).length,
-                                                                      shrinkWrap: true,
-                                                                      itemBuilder: (context, data_index){
-                                                                        return Row(
-                                                                          children: [
-                                                                            Text("Data ${index + 1} : "),
-                                                                            SizedBox(width: 10,),
-                                                                            Text("58805.63"),
-                                                                          ],
-                                                                        );
-                                                                      }),
-                                                                  trailing: Icon(Icons.arrow_forward_ios_outlined),
-                                                                )
+                                                                  child: ListTile(
+                                                                    leading: Image.asset("${data["icon"]}", height: 25,),
+                                                                    title: Row(
+                                                                      children: [
+                                                                        Container(
+                                                                          height: 15,
+                                                                          width: 15,
+                                                                          color: Color(int.parse(data["color_code"] as String)),
+                                                                        ),
+                                                                        const SizedBox(width: 10,),
+                                                                        Text("${data["title"]}", style: TextStyle(fontWeight: FontWeight.bold),),
+                                                                        SizedBox(width: 10,),
+                                                                        Text("(${data["status"]})", style: TextStyle(fontSize: 10.sp, color: data["status"] == "Active" ? Colors.green : Colors.red),)
+                                                                      ],
+                                                                    ),
+                                                                    subtitle: ListView.builder(
+                                                                        itemCount: (data["data"] as List<dynamic>).length,
+                                                                        shrinkWrap: true,
+                                                                        itemBuilder: (context, data_index){
+                                                                          return Row(
+                                                                            children: [
+                                                                              Text("Data ${index + 1} : "),
+                                                                              SizedBox(width: 10,),
+                                                                              Text("58805.63"),
+                                                                            ],
+                                                                          );
+                                                                        }),
+                                                                    trailing: Icon(Icons.arrow_forward_ios_outlined),
+                                                                  )
+                                                              ),
                                                             );
                                                           }),
                                                     ),
@@ -203,20 +204,23 @@ class scube_home extends StatelessWidget {
               itemCount: 6,
               itemBuilder: (context, index){
                 final option = controller.option_list[index];
-                return Container(
-                  height: 30,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      spacing: 10,
-                      children: [
-                        Image.asset("${option["icon"]}"),
-                        Text("${option["title"]}", style: TextStyle(fontSize: 14.sp),),
-                      ],
+                return GestureDetector(
+                  onTap: () => controller.route_options("${option["title"]}"),
+                  child: Container(
+                    height: 30,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        spacing: 10,
+                        children: [
+                          Image.asset("${option["icon"]}"),
+                          Text("${option["title"]}", style: TextStyle(fontSize: 14.sp),),
+                        ],
+                      ),
                     ),
                   ),
                 );

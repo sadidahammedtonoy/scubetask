@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:scubetask/App/assets_path.dart';
+import 'package:scubetask/App/routes.dart';
 
 class home_controller extends GetxController{
 
@@ -56,5 +58,14 @@ class home_controller extends GetxController{
       "status" : "Inactive"
     }
   ];
+
+  void route_options(String optionName) {
+    debugPrint("Option Name: $optionName");
+    Get.toNamed(routes.options_screen);
+  }
+
+  void route_data_preview() {
+    Get.toNamed(routes.data_preview_screen);
+  }
 
 }

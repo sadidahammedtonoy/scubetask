@@ -9,4 +9,5 @@ class assets_path {
   static String home = "assets/icons/Asset 1@4x-8 1.png";
   static String no_data = "assets/icons/Asset 1@4x 1.png";
   static String arrow_up = "assets/icons/Group 157.png";
+  static String progress = "assets/icons/solar_chart-bold.png";
 }
